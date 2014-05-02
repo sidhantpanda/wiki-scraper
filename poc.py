@@ -4,7 +4,7 @@ import os.path
 
 # List of chapters to build into the subject
 # chapters = ["Category:Tata"]
-categories = ["Category:Artificial_intelligence","Category:Optics", "Category:Mechanics", "Category:Computer_science", "Category:Operating_systems", "Category:Software", "Category:Computer_networks", "Category:Software_engineering", "Category:Systems_engineering", "Category:Computer_programming", "Category:Computer_security"]
+categories = ["Category:Artificial_intelligence","Category:Optics", "Category:Mechanics", "Category:Computer_science", "Category:Operating_systems", "Category:Software", "Category:Computer_networks", "Category:Software_engineering", "Category:Systems_engineering", "Category:Computer_programming", "Category:Computer_security", "Category:Websites", "Category:Writing", "Category:Photography", "Category:Cities", "Category:Data_analysis", "Category:Covariance_and_correlation", "Category:Cognition", "Category:Cognitive_biases", "Category:Creativity", "Category:Nanotechnology", "Category:Nuclear_technology", "Category:Nuclear_technology", "Category:Internet", "Category:Robotics", ""]
 
 # Fetch chapters from Wikipedia
 site = wiki.Wiki("http://en.wikipedia.org/w/api.php")
