@@ -4,7 +4,7 @@ import os.path
 
 # List of chapters to build into the subject
 # chapters = ["Category:Tata"]
-categories = ["Category:Artificial_intelligence"]
+categories = ["Category:Artificial_intelligence","Category:Optics", "Category:Mechanics", "Category:Computer_science", "Category:Operating_systems", "Category:Software", "Category:Computer_networks", "Category:Software_engineering", "Category:Systems_engineering", "Category:Computer_programming", "Category:Computer_security"]
 
 # Fetch chapters from Wikipedia
 site = wiki.Wiki("http://en.wikipedia.org/w/api.php")
@@ -44,7 +44,7 @@ for category in categories:
         body = body.encode('ascii','ignore')
 
         title = title.replace('/','-')
-        
+
         if not os.path.exists(subdirectory):
             os.makedirs(subdirectory)
         text_file = open(os.path.join(subdirectory, title + ".txt"), "w+")
