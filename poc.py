@@ -18,6 +18,15 @@ params = {
 }
 
 for category in categories:
+
+    subdirectory="data/"+category
+    #this is my own way of skipping a category if the directory
+    #exists. You can choose your own way of doing so.
+    if not os.path.exists(subdirectory):
+            os.makedirs(subdirectory)
+    else:
+        continue
+
     params["cmtitle"] = category
     req = api.APIRequest(site, params)
     data = req.query()
@@ -36,20 +45,14 @@ for category in categories:
             "format": "jsonfm"
         }
         r = api.APIRequest(site, p)
-        d = r.query()     
+        d = r.query()
+
         body = d['query']['pages'][str(pageid)]['revisions'][0]['*']
-
-        subdirectory="data/"+category
-
         body = body.encode('ascii','ignore')
 
         title = title.replace('/','-')
 
-        if not os.path.exists(subdirectory):
-            os.makedirs(subdirectory)
+        
         text_file = open(os.path.join(subdirectory, title + ".txt"), "w+")
-
         text_file.write(body)
-
         text_file.close()
-        # print body # To be persisted onto a file
