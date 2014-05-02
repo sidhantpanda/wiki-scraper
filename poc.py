@@ -42,10 +42,8 @@ for category in categories:
         subdirectory="data/"+category
 
         body = body.encode('ascii','ignore')
-        if title.startswith("User:"):
-            sub,title = title.split("/",1)
-            subdirectory=subdirectory+"/"+sub
 
+        title = title.replace('/','-')
         
         if not os.path.exists(subdirectory):
             os.makedirs(subdirectory)
